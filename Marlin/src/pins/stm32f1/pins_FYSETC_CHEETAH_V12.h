@@ -37,6 +37,7 @@
 #undef RGB_LED_B_PIN
 
 #define FAN1_PIN                           PB0    // Fan1
+#define AC_DET                             PD2    // AC-DET
 
 #if HAS_TMC_UART
 

@@ -623,7 +623,7 @@ float Probe::run_z_probe(const bool sanity_check/*=true*/) {
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPAIR("2nd Probe Z:", z2, " Discrepancy:", first_probe_z - z2);
 
     // Return a weighted average of the fast and slow probes
-    const float measured_z = (z2 * 3.0 + first_probe_z * 2.0) * 0.2;
+    const float measured_z = (z2 * 4.0 + first_probe_z * 1.0) * 0.2;
 
   #else
 
