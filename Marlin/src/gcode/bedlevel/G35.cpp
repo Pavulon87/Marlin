@@ -123,7 +123,7 @@ void GcodeSuite::G35() {
     // length of the deployed pin (BLTOUCH stroke < 7mm)
     current_position.z = (Z_CLEARANCE_BETWEEN_PROBES) + (7 * ENABLED(BLTOUCH_HS_MODE));
 
-    const float z_probed_height = probe.probe_at_point(screws_tilt_adjust_pos[i], PROBE_PT_RAISE, 0, true);
+    const float z_probed_height = probe.probe_at_point(screws_tilt_adjust_pos[i], PROBE_PT_RAISE, 0, false);
 
     if (isnan(z_probed_height)) {
       SERIAL_ECHOPAIR("G35 failed at point ", int(i), " (", tramming_point_name[i], ")");
