@@ -1356,7 +1356,10 @@ void MarlinUI::update() {
   void MarlinUI::set_status(const char * const message, const bool persist) {
     if (alert_level) return;
 
-    TERN_(HOST_PROMPT_SUPPORT, host_action_notify(message));
+    if ( ( strncmp(message,"ETL",3) != 0 ) and ( strncmp(message,"ETA",3) != 0 ) )
+    {
+      TERN_(HOST_PROMPT_SUPPORT, host_action_notify(message));
+    }
 
     // Here we have a problem. The message is encoded in UTF8, so
     // arbitrarily cutting it will be a problem. We MUST be sure
