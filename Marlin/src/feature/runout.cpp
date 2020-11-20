@@ -109,7 +109,7 @@ void event_filament_runout() {
         || TERN0(ADVANCED_PAUSE_FEATURE, strstr(FILAMENT_RUNOUT_SCRIPT, "M25"))
       )
     ) {
-      host_action_paused(false);
+      //host_action_paused(false); //Pauza wylaczona
     }
     else {
       // Legacy Repetier command for use until newer version supports standard dialog
@@ -120,7 +120,7 @@ void event_filament_runout() {
         SERIAL_EOL();
       #endif
 
-      host_action_pause(false);
+      //host_action_pause(false); //Pauza wylaczona
     }
     SERIAL_ECHOPGM(" " ACTION_REASON_ON_FILAMENT_RUNOUT " ");
     SERIAL_CHAR(tool);
