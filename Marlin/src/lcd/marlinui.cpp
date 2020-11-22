@@ -1628,6 +1628,7 @@ void MarlinUI::update() {
       if (old_status < 2) {
         TERN_(EXTENSIBLE_UI, ExtUI::onMediaInserted()); // ExtUI response
         #if ENABLED(BROWSE_MEDIA_ON_INSERT)
+          clear_menu_history();
           quick_feedback();
           goto_screen(MEDIA_MENU_GATEWAY);
         #else
